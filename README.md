@@ -21,12 +21,12 @@ My initial plan for this project was to use several numeric measures of music, s
 
 Most of the data preprocessing was done through the use of functions. For the first CNN model, I wrote a function that computed the mel spectrogram for each audio file in a given directory, reshaped them so that they were all the same size, and stored them in a numpy array. It also created an array of corresponding targets, which represet the genre labels. This function returned both the feature array and target array. 
 
-Later on in the modeling process, I decided to try modeling with only a subset of the genres, so I also created a function similar to the one mentioned above, but it stored the mel spectrogram data in a dataframe with their correspinding genre labels. In order to do this, I had to flatten the mel spectrograms. This function makes it easier to efficiently access the data for several different genre subsets to model with. 
+Later on in the modeling process, I decided to try modeling with only a subset of the genres, so I also created a function similar to the one mentioned above, but it stored the mel spectrogram data in a dataframe with their corresponding genre labels. In order to do this, I had to flatten the mel spectrograms. This function makes it easier to efficiently access the data for several different genre subsets to model with. 
 
 Lastly, for the numeric features, I wrote a function that computed the first 13 mfccs, spectral centroid, spectral rolloff, and zero-crossing rate for each audio file in a given directory. It stored these values in a dataframe as well as their corresponding file names and genre labels. 
 
 ### Data Cleaning & EDA
-There wasn't much data cleaning to be done. Thankfully, the audio files were all the same length, so I didn't have to deal with different song lengths. Really the only data cleaning that had to be done was mapping the genre labels to numeric values. For some exploraory analysis, I also graphed one mel spectrogram for each genre to see what they looked like. Seeing the differences gave me more confidence that a CNN would perform rather well. 
+There wasn't much data cleaning to be done. Thankfully, the audio files were all the same length, so I didn't have to deal with different song lengths. Really the only data cleaning that had to be done was mapping the genre labels to numeric values. For some exploratory analysis, I also graphed one mel spectrogram for each genre to see what they looked like. Seeing the differences gave me more confidence that a CNN would perform rather well. 
 
 ![](./images/mel_spectrograms.png)
 
